@@ -10,7 +10,39 @@
 </head>
 <body>
     
-    
+    <div id="pet">
+        This is the Pet Image.
+    </div>
+
+    <div class="pet-info">
+        <div>My Pet's Name is <input type="text" id="create-name">.</div>
+        <div>My Pet's Favorite Food is <input type="text" id="create-food">.</div>
+        <div>My Pet's Favorite Game is <input type="text" id="create-game">.</div>
+ 
+        <button onclick="createPet()">Create Your Pet</button>
+    </div>
+
+    <div class="pet-display">
+        <div id="pet-bio">
+        <div>This is <span class="pet-name"></span>.</div>
+        <div><span class="pet-name"></span>'s favorite food is <span class="food"></span>.</div>
+        <div><span class="pet-name"></span>'s favorite game is <span class="game"></span>.</div>
+    </div>
+
+    <div id="pet-status">
+        <div>Happiness: <span id="happy-score"></span></div>
+        <div>Hunger: <span id="hunger-score"></span></div>
+        <div>Hygiene: <span id="hygiene-score"></span></div>
+    </div>
+
+    </div>
+
+    <div class="pet-actions">
+        <button id="food-action">Feed <span class="food"></span></button>
+        <button id="play-action">Play <span class="game"></span></button>
+        <button id="clean-action">Clean</button>
+    </div>
+
 
 </body>
 </html>
