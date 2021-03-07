@@ -1,3 +1,7 @@
+let petDisplay = document.getElementById("pet-display");
+let petInfo = document.getElementById("pet-info");
+
+
 function createPet(){
     let petName = document.getElementById("create-name").value;
     let petFood = document.getElementById("create-food").value;
@@ -12,6 +16,9 @@ function createPet(){
     Array.from(document.getElementsByClassName('game')).forEach(function(element){
         element.innerHTML = petGame;
     })
+
+    petInfo.classList.add("hide");
+    petDisplay.classList.remove("hide");
 };
 
 
@@ -28,7 +35,7 @@ hygieneScore.innerHTML = hygiene;
 
 
 function play(){
-    ++happy;
+    happy+=2;
     --hygiene;
     --hunger;
     document.getElementById('happy-score').innerHTML = happy;
@@ -37,15 +44,26 @@ function play(){
 }
 
 function clean(){
-    ++hygiene;
-    --happy;
+    hygiene+=1;
+    happy = happy - 0.5;
     document.getElementById('hygiene-score').innerHTML = hygiene;
     document.getElementById('happy-score').innerHTML = happy;
 }
 
 function feed(){
-    ++hunger;
+    hunger+=2;
     hygiene = hygiene - 0.5;
     document.getElementById('hunger-score').innerHTML = hunger;
     document.getElementById('hygiene-score').innerHTML = hygiene;
+}
+
+function displayToggle(){
+    hygiene = 0;
+    happy = 0;
+    hunger = 0;
+    document.getElementById('hunger-score').innerHTML = hunger;
+    document.getElementById('hygiene-score').innerHTML = hygiene;
+    document.getElementById('happy-score').innerHTML = happy;
+    petInfo.classList.remove("hide");
+    petDisplay.classList.add("hide");
 }
